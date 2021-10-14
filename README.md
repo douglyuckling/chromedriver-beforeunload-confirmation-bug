@@ -1,6 +1,6 @@
 This project demonstrates a bug observed with ChromeDriver when interacting with the confirmation dialog triggered by
 a `beforeunload` event in Chrome. The bug is that the dialog remains visible even after it has been accepted or
-dismissed.
+dismissed. See https://crbug.com/chromedriver/3932 for details.
 
 Due to the nature of the bug, it can't easily be demonstrated with an actual test that passes or fails. So instead, this
 project runs a simple application that demonstrates it. It's a simple Spring Boot application, and it uses the Gradle
