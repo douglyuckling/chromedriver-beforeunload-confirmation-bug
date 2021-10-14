@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>A page that confirms leaving</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<textarea>Original value</textarea>
+
+<script>
+    const textarea = document.querySelector('textarea');
+    const originalValue = textarea.value;
+
+    window.addEventListener('beforeunload', event => {
+        const currentValue = textarea.value;
+
+        if (currentValue !== originalValue) {
+            event.preventDefault();
+            event.returnValue = "You appear to have unsaved data on this page. Are you sure you want to leave?";
+        }
+    });
+</script>
+
+</body>
+</html>
